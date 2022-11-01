@@ -93,10 +93,10 @@ extension DeltaAttributesExtensions on Attributes {
     return null;
   }
 
-  String? get dpAction {
-    if (containsKey(BuiltInAttributeKey.dpAction) &&
-        this[BuiltInAttributeKey.dpAction] is String) {
-      return this[BuiltInAttributeKey.dpAction];
+  String? get dpaction {
+    if (containsKey(BuiltInAttributeKey.dpaction) &&
+        this[BuiltInAttributeKey.dpaction] is String) {
+      return this[BuiltInAttributeKey.dpaction];
     }
     return null;
   }

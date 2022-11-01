@@ -255,11 +255,11 @@ class _FlowyRichTextState extends State<FlowyRichText> with SelectableMixin {
             TextStyle(backgroundColor: attributes.backgroundColor),
           );
         }
-        if (attributes.dpAction != null) {
+        if (attributes.dpaction != null) {
           textStyle = textStyle.combine(style.href);
           recognizer = TapGestureRecognizer()
             ..onTap = () => widget.editorState.customEventHandler
-                ?.call(attributes.dpAction!);
+                ?.call(attributes.dpaction!);
         }
       }
       offset += textInsert.length;
