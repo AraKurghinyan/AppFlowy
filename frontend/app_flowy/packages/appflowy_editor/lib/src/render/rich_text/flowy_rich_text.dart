@@ -255,6 +255,12 @@ class _FlowyRichTextState extends State<FlowyRichText> with SelectableMixin {
             TextStyle(backgroundColor: attributes.backgroundColor),
           );
         }
+        if (attributes.dpAction != null) {
+          textStyle = textStyle.combine(style.href);
+          recognizer = TapGestureRecognizer()
+            ..onTap = () => widget.editorState.customEventHandler
+                ?.call(attributes.dpAction!);
+        }
       }
       offset += textInsert.length;
       textSpans.add(
@@ -276,12 +282,7 @@ class _FlowyRichTextState extends State<FlowyRichText> with SelectableMixin {
         ),
       );
     }
-    if (attributes.dpAction != null) {
-      textStyle = textStyle.combine(style.href);
-      recognizer = TapGestureRecognizer()
-        ..onTap = () =>
-            widget.editorState.customEventHandler?.call(attributes.dpAction!);
-    }
+
     return TextSpan(
       children: textSpans,
     );
