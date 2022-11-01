@@ -20,6 +20,7 @@ class BuiltInAttributeKey {
   static String backgroundColor = 'backgroundColor';
   static String font = 'font';
   static String href = 'href';
+  static String dpAction = 'dpAction';
 
   static String subtype = 'subtype';
   static String heading = 'heading';

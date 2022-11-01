@@ -48,6 +48,8 @@ enum CursorUpdateReason {
 class EditorState {
   final Document document;
 
+  final void Function(String event)? customEventHandler;
+
   // Service reference.
   final service = FlowyService();
 
@@ -107,6 +109,7 @@ class EditorState {
 
   EditorState({
     required this.document,
+    this.customEventHandler,
   }) {
     undoManager.state = this;
   }
